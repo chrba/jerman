@@ -1,7 +1,7 @@
 import org.scalatest.{FlatSpec, Matchers}
 
 
-class JermanParserTest extends FlatSpec with Matchers with KeywordMapper {
+class KeywordMapperTest extends FlatSpec with Matchers with KeywordMapper {
 
   "Klasse" should "be translated to class" in {
     replaceLine("Klasse{") should be ("class{")
@@ -26,12 +26,12 @@ class JermanParserTest extends FlatSpec with Matchers with KeywordMapper {
   }
 
 
-  "Haupt" should "translated to main" in {
-    replaceLine(" Haupt ") should be (" main ")
-    replaceLine(" Haupt(") should be (" main(")
+  "haupt" should "translated to main" in {
+    replaceLine(" haupt ") should be (" main ")
+    replaceLine(" haupt(") should be (" main(")
   }
   it should "not be translated inside name" in {
-    replaceLine("meineHauptMethode") should be ("meineHauptMethode")
+    replaceLine("meinehauptMethode") should be ("meinehauptMethode")
   }
 
 
@@ -40,7 +40,7 @@ class JermanParserTest extends FlatSpec with Matchers with KeywordMapper {
   }
 
   "Main method" should "be replaced with java main method" in {
-    val mainMethod = "öffentlich statische Leere Haupt(Zeichenkette[] args) {"
+    val mainMethod = "öffentlich statische Leere haupt(Zeichenkette[] args) {"
     replaceLine(mainMethod) should be ("public static void main(String[] args) {")
   }
 

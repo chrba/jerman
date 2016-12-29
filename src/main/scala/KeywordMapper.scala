@@ -25,7 +25,7 @@ trait KeywordMapper {
     s"final$adjectiveSuffix" -> "final ",
     s"geschützt$adjectiveSuffix" -> "protected",
     s"Leer$adjectiveSuffix" -> "void ",
-    "(?<=\\s)Haupt(?=[(,\\s])" -> "main");
+    "(?<=\\s)haupt(?=[(,\\s])" -> "main");
 
   def replaceLine(line:String) =
     line.split("\"").zipWithIndex.map(tuple => if(tuple._2 % 2 == 1) "\""+tuple._1+"\"" else replaceKeywords(tuple._1)) mkString
