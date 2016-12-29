@@ -19,7 +19,7 @@ class KeywordMapperTest extends FlatSpec with Matchers with KeywordMapper {
     replaceLine("Ganzzahl ") should be ("int ")
     replaceLine("Ganzzahl[]") should be ("int[]")
     replaceLine("Ganzzahl []") should be ("int []")
-
+    replaceLine("Ganzzahl...") should be ("int...")
   }
   it should "not be translated inside variable name" in {
     replaceLine("meineGanzzahl") should be ("meineGanzzahl")

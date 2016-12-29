@@ -9,15 +9,15 @@ Packet de.jerman.beispiel;
 
      öffentlich statische Leere haupt(Zeichenkette... z) {
             finales Hauptprogramm hauptprogramm = neues Hauptprogramm("test");
-            gibAus(hauptprogramm.gibName());
+           System.aus.druckzl(hauptprogramm.gibName()));
      }
 
      öffentliche Zeichenkette gibName() {
             gibzurück dies.name;
      }
 
-     private Leere gibAus(Zeichenkette z) {
-            System.out.println("");
-     }
+    private Leere test() {
+        //tue nichts
+    }
 
 }

@@ -3,12 +3,13 @@
   */
 trait KeywordMapper {
   val adjectiveSuffix = "(e|(es)){0,1}\\s"
-  val typeSuffix = "(?=(\\s|\\[\\]))"
+  val typeSuffix = "(?=(\\s|\\[\\]|\\.\\.\\.))"
   val keywordsMap = Map(
     "Packet(?=\\s)" -> "package",
     "gibzurück(?=\\s)" -> "return",
     "Klasse(?=[{,\\s])" -> "class",
     "dies." -> "this.",
+    "System.aus.druckzl\\(" -> "System.out.println(",
 
     //types
     s"Zeichenkette$typeSuffix" -> "String",
@@ -17,6 +18,7 @@ trait KeywordMapper {
     s"Gleitkommazahl$typeSuffix" -> "float",
     s"Zeichen$typeSuffix" -> "char",
     s"Lang$typeSuffix" -> "long",
+    s"Leere$typeSuffix" -> "void",
 
 
     //adjectives
@@ -24,7 +26,7 @@ trait KeywordMapper {
     s"statisch$adjectiveSuffix" -> "static ",
     s"final$adjectiveSuffix" -> "final ",
     s"geschützt$adjectiveSuffix" -> "protected",
-    s"Leer$adjectiveSuffix" -> "void ",
+    s"neu$adjectiveSuffix" -> "new ",
     "(?<=\\s)haupt(?=[(,\\s])" -> "main");
 
   def replaceLine(line:String) =
