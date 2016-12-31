@@ -1,0 +1,23 @@
+Packet de.jerman.beispiel;
+
+öffentliche Klasse Hauptprogramm {
+     private Zeichenkette name;
+
+     öffentliches Hauptprogramm(finale Zeichenkette z) {
+            dies.name = z;
+     }
+
+     öffentlich statische Leere haupt(Zeichenkette... z) {
+            finales Hauptprogramm hauptprogramm = neues Hauptprogramm("test");
+           System.aus.druckzl(hauptprogramm.gibName()));
+     }
+
+     öffentliche Zeichenkette gibName() {
+            gibzurück dies.name;
+     }
+
+    private Leere test() {
+        //tue nichts
+    }
+
+}
