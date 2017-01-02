@@ -1,3 +1,5 @@
+package jerman
+
 import org.scalatest.{FlatSpec, Matchers}
 
 

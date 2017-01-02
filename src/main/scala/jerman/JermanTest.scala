@@ -1,3 +1,5 @@
+package jerman
+
 import scala.io.Source
 
 

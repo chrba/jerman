@@ -1,7 +1,6 @@
-import java.nio.file.{Files, Path}
+package jerman
+import java.nio.file._
 import java.util.Comparator
-
-import scala.io.BufferedSource
 
 /**
   * Auto clean directory after usage
