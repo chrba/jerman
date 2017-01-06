@@ -1,19 +1,26 @@
 package jerman
 import java.nio.file._
+import java.io.File
 import java.util.Comparator
 
 /**
   * Auto clean directory after usage
   */
 trait ARM {
+  def deleteRecursive(dir:File): Unit = {
+    dir.listFiles().foreach(file => {
+      if(!file.isDirectory) file.delete()
+      else deleteRecursive(file)
+    })
+
+  }
+
   def autoClean(dir:Path, f: Path => Unit) {
     try {
       f(dir)
     }
     finally {
-      Files.walk(dir)
-        .sorted(Comparator.reverseOrder())
-        .forEach(p => Files.delete(p))
+      deleteRecursive(dir.toFile)
     }
   }
 

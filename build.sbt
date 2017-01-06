@@ -1,10 +1,12 @@
 sbtPlugin := true
 
+organization := "de.jerman"
+
 name := "jerman"
 
-version := "1.0"
+version := "1.1"
 
-scalaVersion := "2.12.0"
+scalaVersion := "2.10.4"
 
 //sourceGenerators in Compile += Def.task {
 //  //val file = (sourceManaged in Compile).value / "demo" / "Test.scala"
