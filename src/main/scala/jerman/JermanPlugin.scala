@@ -13,15 +13,13 @@ object JermanPlugin extends AutoPlugin with Transpiler {
   }
   import autoImport._
 
-  val jermanSrcDir = (sourceDirectory in Compile).value / "jerman"
-
   override lazy val projectSettings = Seq(
     jermanVersion := "1.0",
-    unmanagedSourceDirectories in Compile += jermanSrcDir,
+    watchSources <++= baseDirectory map { path => ((path / "src/main/jerman") ** "*.jerman").get },
     sourceGenerators in Compile += Def.task {
       val log = streams.value.log
       log.info("compiling jerman sources...")
-
+      val jermanSrcDir = (sourceDirectory in Compile).value / "jerman"
       val managedSrcDir = (sourceManaged in Compile).value / "java"
       compileAll(jermanSrcDir, managedSrcDir)
     }.taskValue
