@@ -2,8 +2,7 @@ package jerman
 import java.io.File
 
 import sbt.Keys._
-import sbt.AutoPlugin
-import sbt._
+import sbt.{AutoPlugin, Level, Logger, _}
 
 object JermanPlugin extends AutoPlugin with Transpiler {
   override def requires = sbt.plugins.JvmPlugin
@@ -14,11 +13,15 @@ object JermanPlugin extends AutoPlugin with Transpiler {
   }
   import autoImport._
 
+  val jermanSrcDir = (sourceDirectory in Compile).value / "jerman"
+
   override lazy val projectSettings = Seq(
     jermanVersion := "1.0",
+    unmanagedSourceDirectories in Compile += jermanSrcDir,
     sourceGenerators in Compile += Def.task {
-      println("compiling jerman sources...")
-      val jermanSrcDir = (sourceDirectory in Compile).value / "jerman"
+      val log = streams.value.log
+      log.info("compiling jerman sources...")
+
       val managedSrcDir = (sourceManaged in Compile).value / "java"
       compileAll(jermanSrcDir, managedSrcDir)
     }.taskValue
