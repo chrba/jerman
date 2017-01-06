@@ -5,7 +5,7 @@ import java.nio.file.{Files, Path, Paths}
 /**
   * Created by cbannes on 31.12.16.
   */
-trait JermanTestFixtures extends ARM {
+trait JermanTestFixtures extends Arm {
   def withFiles(testCode: Path => Any) {
     autoClean(Files.createTempDirectory("scalatest-"), rootDir => {
       val subdir1 = Files.createDirectories(rootDir.resolve("subdir1"))

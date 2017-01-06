@@ -1,19 +1,26 @@
 package jerman
 import java.io.File
 
-/**
-  * Created by cbannes on 02.01.17.
-  */
-trait JermanPlugin {
-  self: JermanCompiler with JermanFileLocator =>
+import sbt.Keys._
+import sbt.AutoPlugin
+import sbt._
 
-  def compileAll(src:File, dest:File):Seq[File] = {
-    find(src.toPath) map { jermanFile =>
-      compile(jermanFile, dest.toPath).toFile
-    }
+object JermanPlugin extends AutoPlugin with Transpiler {
+  override def requires = sbt.plugins.JvmPlugin
+  override def trigger = allRequirements
+
+  object autoImport {
+    lazy val jermanVersion = SettingKey[String]("jermanVersion", "the jerman version")
   }
-}
+  import autoImport._
 
-object JermanPlugin  {
-  def apply() = new JermanPlugin with JermanCompiler with JermanFileLocator with KeywordMapper
+  override lazy val projectSettings = Seq(
+    jermanVersion := "1.0",
+    sourceGenerators in Compile += Def.task {
+      println("compiling jerman sources...")
+      val jermanSrcDir = (sourceDirectory in Compile).value / "jerman"
+      val managedSrcDir = (sourceManaged in Compile).value / "java"
+      compileAll(jermanSrcDir, managedSrcDir)
+    }.taskValue
+  )
 }

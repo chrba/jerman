@@ -6,7 +6,7 @@ import java.util.Comparator
 /**
   * Auto clean directory after usage
   */
-trait ARM {
+trait Arm {
   def deleteRecursive(dir:File): Unit = {
     dir.listFiles().foreach(file => {
       if(!file.isDirectory) file.delete()

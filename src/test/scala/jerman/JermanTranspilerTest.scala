@@ -4,11 +4,11 @@ import java.nio.file._
 
 import org.scalatest.{FlatSpec, Matchers}
 
-class JermanCompilerTest extends FlatSpec with Matchers with JermanTestFixtures {
+class JermanTranspilerTest extends FlatSpec with Matchers with JermanTestFixtures {
 
   "JermanCompiler" should "compile jerman file to output directory" in withJermanFile { jermanFile =>
     withEmptyDir { emptyDir =>
-      val compiler = new JermanCompiler with KeywordMapper
+      val compiler = new JermanTranspiler with KeywordMapper
       val javaFile = compiler.compile(jermanFile, emptyDir)
 
       javaFile.toFile should be a 'file

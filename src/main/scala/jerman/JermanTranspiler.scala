@@ -1,11 +1,11 @@
 package jerman
-import java.io.PrintWriter
+import java.io.{File, PrintWriter}
 import java.nio.file._
 
 /**
   * Created by cbannes on 02.01.17.
   */
-trait JermanCompiler {
+trait JermanTranspiler {
   this: KeywordMapper =>
 
   def toJavaFileName(jermanFile:Path) =
@@ -25,6 +25,5 @@ trait JermanCompiler {
 
       outFile
    }
-
 
 }
