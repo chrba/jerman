@@ -2,9 +2,7 @@ package jerman
 import java.io.{File, PrintWriter}
 import java.nio.file._
 
-/**
-  * Created by cbannes on 02.01.17.
-  */
+
 trait JermanTranspiler {
   this: KeywordMapper =>
 

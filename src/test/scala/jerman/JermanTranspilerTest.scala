@@ -6,10 +6,10 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class JermanTranspilerTest extends FlatSpec with Matchers with JermanTestFixtures {
 
-  "JermanCompiler" should "compile jerman file to output directory" in withJermanFile { jermanFile =>
+  "JermanTranspiler" should "compile jerman file to output directory" in withJermanFile { jermanFile =>
     withEmptyDir { emptyDir =>
-      val compiler = new JermanTranspiler with KeywordMapper
-      val javaFile = compiler.compile(jermanFile, emptyDir)
+      val transpiler = new JermanTranspiler with KeywordMapper
+      val javaFile = transpiler.compile(jermanFile, emptyDir)
 
       javaFile.toFile should be a 'file
       javaFile.toFile.getName should endWith (".java")
