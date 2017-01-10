@@ -3,6 +3,8 @@ Packet de.jerman.beispiel;
 //import
 importiere java.util.*;
 
+blaZeichenkette i
+
 öffentliche Klasse Hauptprogramm {
      private Zeichenkette name;
 
@@ -93,6 +95,10 @@ importiere java.util.*;
     }
 
 }
+
+  öffentliche Zeichenkette test(finale Ganzzahl i,Zeichenkette u) {
+
+  }
 
 //interface with extends
 öffentliche Schnittstelle  test erweitert test2{

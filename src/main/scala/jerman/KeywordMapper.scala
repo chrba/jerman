@@ -7,6 +7,8 @@ trait KeywordMapper {
   val adjectiveSuffix = "(e|(er)|(es)){0,1}\\s"
   val typeSuffix = "(?=(\\s|\\[\\]|\\.\\.\\.))"
   val obrace = "(\\s)*($|\\{)"
+  val orbrace = "(\\s)*\\("
+  val start = "(?<=(\\s+|^|\\(|,))"
 
   val keywordsMap = Map(
     "Packet(?=\\s)" -> "package",
@@ -19,13 +21,22 @@ trait KeywordMapper {
     "für(?=(\\s)*(\\())" -> "for",
     "schalte(?=(\\s)*(\\())" -> "switch",
     "wenn(?=(\\s)*(\\())" -> "if",
+    "implementiert(?=\\s)" -> "implements",
+    "erweitert(?=\\s)" -> "extends",
+    "instanzvon(?=\\s)" -> " instanceof",
+    "Fall(?=\\s)" -> " case",
+
     s"dann(?=$obrace)" -> "else",
-    " implementiert(?=\\s)" -> " implements",
-    " erweitert(?=\\s)" -> " extends",
-    " instanzvon(?=\\s)" -> " instanceof",
-    " Fall(?=\\s)" -> " case",
+    s"versuch(?=$obrace)" -> "try",
+    s"endlich(?=$obrace)" -> "finally",
+    s"tue(?=$obrace)" -> "do",
 
+    s"fange(?=$orbrace)" -> "catch",
+    s"während(?=$orbrace)" -> "while",
 
+    "importiere " -> "import " ,
+    "breche(?=(\\s+|;))" -> "break",
+    "werfe " -> "throw ",
 
     //types
     s"Zeichenkette$typeSuffix" -> "String",
@@ -50,7 +61,7 @@ trait KeywordMapper {
     s"final$adjectiveSuffix" -> "final ",
     s"geschützt$adjectiveSuffix" -> "protected ",
     s"neu$adjectiveSuffix" -> "new ",
-    "(?<=\\s)haupt(?=[(,\\s])" -> "main");
+    "haupt(?=[(,\\s])" -> "main").map {case (a,b) => start + a -> b}
 
   def replaceLine(line:String) =
     line.split("\"").zipWithIndex.map(tuple => if(tuple._2 % 2 == 1) "\""+tuple._1+"\"" else replaceKeywords(tuple._1)) mkString
