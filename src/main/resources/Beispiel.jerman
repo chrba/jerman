@@ -1,5 +1,8 @@
 Packet de.jerman.beispiel;
 
+//import
+importiere java.util.*;
+
 öffentliche Klasse Hauptprogramm {
      private Zeichenkette name;
 
@@ -20,4 +23,85 @@ Packet de.jerman.beispiel;
         //tue nichts
     }
 
+    öffentliche sychnronisierte Ganzzahl test() {
+
+        //for loop
+        für(Ganzzahl i = 0; i < 10; i++) {
+            i++;
+        }
+
+
+        //while
+        während(i < 100) {
+                i = 0;
+        }
+
+        //do while
+        tue {
+
+        } während(i < 100);
+
+        //tray catch finally
+        versuch {
+
+
+        }
+        fange(Exception e) {
+
+        }
+        endlich {
+
+        }
+
+        //volatile
+        flüchtige Ganzzahl i = 0;
+
+        //instanceof
+        wenn(x instanzvon y) {
+
+        }
+
+        //if else
+        wenn(i < 100) {
+            //throw
+            werfe neue RuntimeException("test");
+        } dann {
+
+        }
+
+        wenn(i < 100) {
+
+        }
+        dann {
+
+        }
+
+        wenn(i < 100) {
+
+        }
+        dann
+        {
+
+        }
+
+        //switch case
+        schalte(i) {
+            Fall x: 100; breche;
+        }
+
+
+    }
+
+}
+
+//interface with extends
+öffentliche Schnittstelle  test erweitert test2{
+    //transient
+    vorübergehende Ganzzahl x;
+}
+
+//implements
+Klasse x implementiert y {
+   //protected
+    geschützte Ganzzahl x;
 }
