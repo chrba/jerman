@@ -4,7 +4,7 @@ organization := "de.jerman"
 
 name := "jerman"
 
-version := "2.3"
+version := "2.4"
 
 scalaVersion := "2.10.4"
 
