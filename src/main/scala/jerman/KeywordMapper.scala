@@ -66,8 +66,16 @@ trait KeywordMapper {
   def replaceLine(line:String) =
     line.split("\"").zipWithIndex.map(tuple => if(tuple._2 % 2 == 1) "\""+tuple._1+"\"" else replaceKeywords(tuple._1)) mkString
 
-  def replaceKeywords(line: String): String =
-    keywordsMap.foldLeft(line) { case (line, (k,v)) => line.replaceAll(k,v) }
+  def replaceKeywords(lineWithComments: String): String = {
+    val line = stripComment(lineWithComments)
+    keywordsMap.foldLeft(line) { case (line, (k, v)) => line.replaceAll(k, v) }
+  }
+
+  def stripComment(line:String) = {
+    val idx = line.indexOfSlice("//")
+    if(idx > -1) line.slice(0, idx)
+    else line
+  }
 }
 
 /*

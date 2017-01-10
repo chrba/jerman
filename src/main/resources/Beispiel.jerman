@@ -5,6 +5,8 @@ importiere java.util.*;
 
 blaZeichenkette i
 
+  //öffentliche Klasse <- should not be translated
+
 öffentliche Klasse Hauptprogramm {
      private Zeichenkette name;
 

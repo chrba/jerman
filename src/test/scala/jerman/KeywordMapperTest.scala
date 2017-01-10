@@ -5,6 +5,11 @@ import org.scalatest.{FlatSpec, Matchers}
 
 class KeywordMapperTest extends FlatSpec with Matchers with KeywordMapper {
 
+  "Comments" should "be ignored in" in {
+    replaceLine("Ganzzahl //Ganzzahl Ganzzahl") should be ("int ")
+    replaceLine("//Ganzzahl") should be ("")
+  }
+
   "Klasse" should "be translated to class" in {
     replaceLine("Klasse{") should be ("class{")
     replaceLine("Klasse {") should be ("class {")
