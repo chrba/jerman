@@ -53,11 +53,10 @@ Alle Keywords sind äquivalent zu Java aber auf deutsch. Einige Keywords können
 <tr><td>Bool</td><td> Packet</td><td> synchronisiert/e/s/r</td><td> tue</td><td> wenn</td></tr>
 <tr><td>breche</td><td> dann</td><td> privat/e/s/r</td><td> dies</td><td> Dopppelt </td></tr>
 <tr><td>implementiert</td><td> geschützt</td><td> werfe</td><td> Fall</td><td> dann </td></tr>
-<tr><td>instanzvon</td><td> gibzurück</td><td> vorübergehend</td><td> fange </td><td>super</td></tr>
+<tr><td>instanzvon</td><td> gibzurück</td><td> vorübergehend</td><td> fange </td><td>neu/e/s/r</td></tr>
 <tr><td> erweitert</td><td> Ganzzahl</td><td> kurz</td><td> versuche</td><td> Zeichen </td></tr>
 <tr><td>final/e/s/r</td><td> Schnittstelle</td><td> statisch/e/s/r</td><td> Leere</td><td>während</td></tr>
 <tr><td>Klasse</td><td> endlich</td><td> Lang</td><td> flüchtig</td><td> Gleitkommazahl</td></tr>
-<tr><td>neu/e/s/r</td><td></td><td></td><td></td><td></td></tr>
 </table>
 
 
