@@ -1,8 +1,6 @@
 package jerman
 
-/**
-  * Created by cbannes on 29.12.16.
-  */
+
 trait KeywordMapper {
   val adjectiveSuffix = "(e|(er)|(es)){0,1}\\s"
   val typeSuffix = "(?=(\\s|\\[\\]|\\.\\.\\.))"
@@ -31,12 +29,12 @@ trait KeywordMapper {
     s"endlich(?=$obrace)" -> "finally",
     s"tue(?=$obrace)" -> "do",
 
-    s"fange(?=$orbrace)" -> "catch",
+    s"fang(?=$orbrace)" -> "catch",
     s"während(?=$orbrace)" -> "while",
 
     "importiere " -> "import " ,
     "breche(?=(\\s+|;))" -> "break",
-    "werfe " -> "throw ",
+    "wirf " -> "throw ",
 
     //types
     s"Zeichenkette$typeSuffix" -> "String",
@@ -77,16 +75,3 @@ trait KeywordMapper {
     else line
   }
 }
-
-/*
-
-assert***	default	goto*		synchronized
-	do	if	private	this
-break		implements	protected	throw
-	else	import	public	throws
-case	enum****	instanceof	return	transient
-catch	extends		try
-		interface
-	finally		strictfp**	volatile
-const*		native	super	while
-*/

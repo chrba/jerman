@@ -2,9 +2,7 @@ package jerman
 import java.io.File
 import java.nio.file._
 
-/**
-  * Created by cbannes on 02.01.17.
-  */
+
 trait JermanFileLocator {
   def findFlat(dir:Path):List[Path] = dir.toFile.listFiles().toList filter (file => isJermanFile(file)) map {_.toPath}
 

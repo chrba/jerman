@@ -3,16 +3,13 @@ import java.nio.file._
 import java.io.File
 import java.util.Comparator
 
-/**
-  * Auto clean directory after usage
-  */
+
 trait Arm {
   def deleteRecursive(dir:File): Unit = {
     dir.listFiles().foreach(file => {
       if(!file.isDirectory) file.delete()
       else deleteRecursive(file)
     })
-
   }
 
   def autoClean(dir:Path, f: Path => Unit) {
