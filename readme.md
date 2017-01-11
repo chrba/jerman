@@ -9,7 +9,9 @@ Jerman ist als sbt Plugin implementiert. Du musst also nur die folgende Zeile in
 ```
 addSbtPlugin("de.jerman" % "jerman" % "2.4")
 ```
-Erstelle eine Jerman-Datei unter src/main/jerman, z.B. Hauptprogramm.jerman mit dem Inhalt
+
+### Beispiel 
+Erstelle eine Beispiel-Jerman-Datei mit der Endung ".jerman" unter src/main/jerman, z.B. Hauptprogramm.jerman mit dem Inhalt
 
 ```
 öffentliche Klasse Hauptprogramm {
@@ -29,7 +31,6 @@ Starte das Programm mit
 ```
 sbt ~run
 ```
-
 
 ### FAQ
 * **Kann ich Jerman produktiv einsetzen?**
@@ -57,6 +58,7 @@ Alle Keywords sind äquivalent zu Java aber auf deutsch. Einige Keywords können
 <tr><td> erweitert</td><td> Ganzzahl</td><td> kurz</td><td> versuche</td><td> Zeichen </td></tr>
 <tr><td>final/e/s/r</td><td> Schnittstelle</td><td> statisch/e/s/r</td><td> Leere</td><td>während</td></tr>
 <tr><td>Klasse</td><td> endlich</td><td> Lang</td><td> flüchtig</td><td> Gleitkommazahl</td></tr>
+<tr><td>Zeichenkette</td><td>wirf</td><td></td><td></td><td></td></tr>
 </table>
 
-
+Viel Spaß beim Programmieren mit Jerman `:-)`
