@@ -4,10 +4,11 @@ Würdest du gerne Programmieren in Java lernen aber du bist in deinem letzten En
 
 ### Wie verwende ich Jerman?
 
-Jerman ist als sbt Plugin implementiert. Du musst also nur die folgende Zeile in deinem sbt Projekt in $PROJECT_ROOT/project/plugins.sbt eintragen und kannst dann mit Jerman loslegen
+Jerman ist als sbt Plugin implementiert. Du musst also nur die folgende zwei Zeilen in deinem sbt Projekt in $PROJECT_ROOT/project/plugins.sbt eintragen und kannst dann mit Jerman loslegen
 
 ```
-addSbtPlugin("de.jerman" % "jerman" % "2.4")
+addSbtPlugin("de.jerman" % "jerman" % "1.0.1")
+resolvers += Resolver.bintrayRepo("chrba","maven")
 ```
 
 ### Beispiel 
