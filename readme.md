@@ -32,20 +32,9 @@ Starte das Programm mit
 sbt ~run
 ```
 
-### FAQ
-* **Kann ich Jerman produktiv einsetzen?**
-Es spricht nichts dagegen. Bisher hat allerdings noch niemand gewagt, ein Projekt in Jerman zu schreiben `;-)`
 
-* **Läuft Jerman in meiner IDE?**
-Für IntelliJ und Eclipse gibt es ein sbt Plugin. Sobald dies installiert ist, kannst du Jerman in deiner IDE verwenden. Syntax-Highlighting wird allerdings noch nicht unterstützt.
 
-* **Ich habe mein Englisch verbessert. Kann ich statt der Jerman-Keywords die entsprechenden Java-Keywords verwenden?**
-Du kannst Jerman und Java beliebig mischen
-
-* **Hat Jerman eine Standard-Bibliothek?**
-Nein, du solltest die Java Standard-Bibliothek verwenden.
-
-### Keywords
+### Jerman Keywords
 Alle Keywords sind äquivalent zu Java aber auf deutsch. Einige Keywords können in meheren Varianten verwendet werden, so kann das Keyword "neu" (in der Tabelle angegeben als neu/e/s/r) in den Varianten neu, neue, neues oder neuer verwendet werden.
 
 
@@ -60,5 +49,19 @@ Alle Keywords sind äquivalent zu Java aber auf deutsch. Einige Keywords können
 <tr><td>Klasse</td><td> endlich</td><td> Lang</td><td> flüchtig</td><td> Gleitkommazahl</td></tr>
 <tr><td>Zeichenkette</td><td>wirf</td><td></td><td></td><td></td></tr>
 </table>
+
+### FAQ
+* **Kann ich Jerman produktiv einsetzen?**
+Es spricht nichts dagegen. Bisher hat allerdings noch niemand gewagt, ein Projekt in Jerman zu schreiben `;-)`
+
+* **Läuft Jerman in meiner IDE?**
+Für IntelliJ und Eclipse gibt es ein sbt Plugin. Sobald dies installiert ist, kannst du Jerman in deiner IDE verwenden. Syntax-Highlighting wird allerdings noch nicht unterstützt.
+
+* **Ich habe mein Englisch verbessert. Kann ich statt der Jerman-Keywords die entsprechenden Java-Keywords verwenden?**
+Du kannst Jerman und Java beliebig mischen
+
+* **Hat Jerman eine Standard-Bibliothek?**
+Nein, du solltest die Java Standard-Bibliothek verwenden.
+
 
 Viel Spaß beim Programmieren mit Jerman `:-)`
