@@ -4,7 +4,8 @@ Würdest du gerne Programmieren in Java lernen aber du bist in deinem letzten En
 
 ### Wie verwende ich Jerman?
 
-Jerman ist als sbt Plugin implementiert. Du musst also nur die folgende zwei Zeilen in deinem sbt Projekt in $PROJECT_ROOT/project/plugins.sbt eintragen und kannst dann mit Jerman loslegen
+Jerman ist als sbt Plugin implementiert. Um ein Jerman-Programm zu starten, muss auf deinem System sbt in der Version >= 0.13.5 installiert sein.
+Du musst nur die folgende zwei Zeilen in deinem sbt Projekt in $PROJECT_ROOT/project/plugins.sbt eintragen und kannst dann mit Jerman loslegen
 
 ```
 addSbtPlugin("de.jerman" % "jerman" % "1.0.1")
@@ -12,6 +13,7 @@ resolvers += Resolver.bintrayRepo("chrba","maven")
 ```
 
 ### Beispiel 
+
 Erstelle eine Beispiel-Jerman-Datei mit der Endung ".jerman" unter src/main/jerman, z.B. Hauptprogramm.jerman mit dem Inhalt
 
 ```
@@ -30,10 +32,14 @@ Klasse Katze {
 ```
 Starte das Programm mit
 ```
-sbt ~run
+sbt run
 ```
 
-Das Programm wird automatisch zunächst nach Java übersetzt und dann mit dem Java-Compiler compiliert.
+Ein Demo Programm in Jerman findest du auch unter https://github.com/chrba/jerman-demo
+
+Das Jerman Programm wird nun zunächst nach Java transpiliert und mit dem Java-Compiler compiliert und dann ausgeführt.
+
+
 
 ### Jerman Keywords
 Alle Keywords sind äquivalent zu Java aber auf deutsch. Einige Keywords können in meheren Varianten verwendet werden, so kann das Keyword "neu" (in der Tabelle angegeben als neu/e/s/r) in den Varianten neu, neue, neues oder neuer verwendet werden.
