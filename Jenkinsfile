@@ -11,5 +11,19 @@ pipeline {
         sh 'echo "hello"'
       }
     }
+    stage('deploy') {
+      steps {
+        parallel(
+          "deploy": {
+            sh 'echo "deploying"'
+            
+          },
+          "": {
+            echo 'ich deploye jetzt'
+            
+          }
+        )
+      }
+    }
   }
 }
